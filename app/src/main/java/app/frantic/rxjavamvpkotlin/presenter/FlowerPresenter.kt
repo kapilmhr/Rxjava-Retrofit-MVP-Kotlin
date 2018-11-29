@@ -11,7 +11,6 @@ class FlowerPresenter(val mainView:FlowerContract.MainView): FlowerContract.Main
     var disposable: Disposable? = null
 
     override fun fetchFlowers() {
-//        disposable = RestApi.instance.getListOfFlower()
         disposable = RestApi.instance.requestAPI.getFlowerList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribe ({

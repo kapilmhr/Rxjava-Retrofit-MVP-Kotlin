@@ -37,4 +37,9 @@ class MainActivity : AppCompatActivity(),FlowerContract.MainView {
         Toast.makeText(this,error,Toast.LENGTH_SHORT).show()
     }
 
+    override fun onStop() {
+        super.onStop()
+        presenter.onStop()
+    }
+
 }
